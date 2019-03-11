@@ -18,6 +18,8 @@ Notes, Exercises, and projects for my <a href="https://github.com/Make-School-Co
 * Realm
 * Userdefaults
 * Keychain
+* Plist
+* Unit & UI Testing
 
 
 ### Acknoledgements
