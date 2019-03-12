@@ -8,7 +8,6 @@ Notes, Exercises, and projects for my <a href="https://github.com/Make-School-Co
 ### Tutorials
 
 * <a href="https://github.com/MediBoss/MOB-2.1/tree/master/CoursePlanner">Course Planner</a>
-
 * <a href="https://github.com/MediBoss/MOB-2.1/tree/master/DocumentManager">Document Manager</a>
 
 
