@@ -99,6 +99,13 @@
 		B86F95DF2252CCCC00933050 /* TripStop */ = {
 			isa = PBXGroup;
 			children = (
+				B86F96172252E5E600933050 /* Supporting Files */,
+				B86F96162252E5DF00933050 /* Helpers */,
+				B86F96152252E5D400933050 /* Caching */,
+				B86F96142252E5CB00933050 /* Networking */,
+				B86F96132252E5C500933050 /* Controllers */,
+				B86F96122252E5C000933050 /* Views */,
+				B86F96112252E5B900933050 /* Models */,
 				B86F95E02252CCCC00933050 /* AppDelegate.swift */,
 				B86F95E22252CCCC00933050 /* ViewController.swift */,
 				B86F95E42252CCCC00933050 /* Main.storyboard */,
@@ -126,6 +133,55 @@
 				B86F96052252CCCE00933050 /* Info.plist */,
 			);
 			path = TripStopUITests;
+			sourceTree = "<group>";
+		};
+		B86F96112252E5B900933050 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B86F96122252E5C000933050 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B86F96132252E5C500933050 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B86F96142252E5CB00933050 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B86F96152252E5D400933050 /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Caching;
+			sourceTree = "<group>";
+		};
+		B86F96162252E5DF00933050 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B86F96172252E5E600933050 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
