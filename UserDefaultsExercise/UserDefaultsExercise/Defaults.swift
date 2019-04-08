@@ -21,11 +21,12 @@ struct Defaults{
             //complete the initializer
             self.token = token
         }
+        
     }
     
     static var saveToken = { (token: String) in
         //complete the method
-        UserDefaults.standard.set(token, forKey: Defaults.tokenKey)
+        UserDefaults.standard.set(Model(token: token), forKey: Defaults.tokenKey)
     }
     
     static var getToken = { () -> Model in
