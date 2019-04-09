@@ -23,5 +23,4 @@ extension Item {
     @NSManaged public var itemTitle: String
     @NSManaged public var loanee: Loanee
     @NSManaged public var notes: String
-
 }

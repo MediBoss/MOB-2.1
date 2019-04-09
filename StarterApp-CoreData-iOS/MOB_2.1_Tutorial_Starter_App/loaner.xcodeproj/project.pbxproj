@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		448856882239D544001EDDC4 /* Loanee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448856872239D544001EDDC4 /* Loanee.swift */; };
+		B85FDA12225D395200585254 /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85FDA11225D395200585254 /* ItemStore.swift */; };
 		B8A57FF52256C18E00255928 /* LoanedItems.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8A57FF32256C18E00255928 /* LoanedItems.xcdatamodeld */; };
 		B8FCF7242256D4BE00B442C0 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCF7222256D4BE00B442C0 /* Item+CoreDataClass.swift */; };
 		B8FCF7252256D4BE00B442C0 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FCF7232256D4BE00B442C0 /* Item+CoreDataProperties.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		448856872239D544001EDDC4 /* Loanee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loanee.swift; sourceTree = "<group>"; };
+		B85FDA11225D395200585254 /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		B8A57FF42256C18E00255928 /* LoanedItems.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoanedItems.xcdatamodel; sourceTree = "<group>"; };
 		B8FCF7222256D4BE00B442C0 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B8FCF7232256D4BE00B442C0 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -55,7 +57,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		44C7B6262227229400A8A0CF /* controllers */ = {
+		44C7B6262227229400A8A0CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E9D24DF2212794E30045C5D8 /* ItemContactInfoViewController.swift */,
@@ -64,19 +66,19 @@
 				E9BA28F421275B1A004FA7D3 /* ItemDetailedViewController.swift */,
 				E969554D21277C3100457E12 /* ItemEditorViewController.swift */,
 			);
-			path = controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		44C7B6272227229C00A8A0CF /* views */ = {
+		44C7B6272227229C00A8A0CF /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				E96F11E92128BCCA004D549A /* ItemCollectionViewCell.swift */,
 				E9D24DEE212789B90045C5D8 /* UIImage+ImagePickerController.swift */,
 			);
-			path = views;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		44C7B628222722A100A8A0CF /* model */ = {
+		44C7B628222722A100A8A0CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B8A57FF32256C18E00255928 /* LoanedItems.xcdatamodeld */,
@@ -84,7 +86,23 @@
 				B8FCF7222256D4BE00B442C0 /* Item+CoreDataClass.swift */,
 				B8FCF7232256D4BE00B442C0 /* Item+CoreDataProperties.swift */,
 			);
-			path = model;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B85FDA0F225D391700585254 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				B85FDA11225D395200585254 /* ItemStore.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		B85FDA10225D392300585254 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E929E9682124EB7E0018488C /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E929E95C2124EB7E0018488C = {
@@ -106,10 +124,11 @@
 		E929E9672124EB7E0018488C /* loaner */ = {
 			isa = PBXGroup;
 			children = (
-				44C7B6262227229400A8A0CF /* controllers */,
-				44C7B628222722A100A8A0CF /* model */,
-				44C7B6272227229C00A8A0CF /* views */,
-				E929E9682124EB7E0018488C /* AppDelegate.swift */,
+				B85FDA10225D392300585254 /* Supporting Files */,
+				B85FDA0F225D391700585254 /* Persistance */,
+				44C7B6262227229400A8A0CF /* Controllers */,
+				44C7B628222722A100A8A0CF /* Models */,
+				44C7B6272227229C00A8A0CF /* Views */,
 				E929E96C2124EB7E0018488C /* Main.storyboard */,
 				E929E96F2124EB810018488C /* Assets.xcassets */,
 				E929E9712124EB810018488C /* LaunchScreen.storyboard */,
@@ -199,6 +218,7 @@
 				B8FCF7252256D4BE00B442C0 /* Item+CoreDataProperties.swift in Sources */,
 				E9D24DEF212789B90045C5D8 /* UIImage+ImagePickerController.swift in Sources */,
 				B8A57FF52256C18E00255928 /* LoanedItems.xcdatamodeld in Sources */,
+				B85FDA12225D395200585254 /* ItemStore.swift in Sources */,
 				E929E9692124EB7E0018488C /* AppDelegate.swift in Sources */,
 				E969554E21277C3100457E12 /* ItemEditorViewController.swift in Sources */,
 				448856882239D544001EDDC4 /* Loanee.swift in Sources */,
