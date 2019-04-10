@@ -1,0 +1,6 @@
+framework module Pods_KeychainExercise {
+  umbrella header "Pods-KeychainExercise-umbrella.h"
+
+  export *
+  module * { export * }
+}
