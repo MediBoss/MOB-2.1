@@ -22,17 +22,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        iCloudSyncSwitch.addTarget(self, action: #selector(iCloudSwitchIsTapped(sender:)), for: .touchUpInside)
         saveMessageButton.addTarget(self, action: #selector(saveButtonIsTapped(with:)), for: .touchUpInside)
         deleteMessageButon.addTarget(self, action: #selector(deleteButtonIsTapped(with:)), for: .touchUpInside)
         
     }
     
 
+    @objc func iCloudSwitchIsTapped(sender: UISwitch){
+        
+        if sender.isOn{
+            keychain.synchronizable = true
+        } else {
+            keychain.synchronizable = false
+        }
+    }
     @objc func saveButtonIsTapped(with sender: UIButton){
         
         guard let message = messageTextField.text else { return }
         
-        // We dont do anything if there is no message to save
         if message.isEmpty{
             return
         }
