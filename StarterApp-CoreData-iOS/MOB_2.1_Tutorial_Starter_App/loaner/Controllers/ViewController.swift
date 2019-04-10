@@ -34,14 +34,8 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        store.saveContext()
+        ItemStore.shared.saveContext()
         updateDataSource()
-    }
-    
-
-    func createNewItem() -> Item {
-        let newItem = NSEntityDescription.insertNewObject(forEntityName: "Item", into: store.persistentContainer.viewContext) as! Item
-        return newItem
     }
     
     func add(saved item: Item) {
@@ -54,24 +48,16 @@ class ViewController: UIViewController {
         deleteItem(at: index)
     }
     
-    // Identify the item by its index
+    // Delete the user-selected item
     func deleteItem(at index: Int) {
-        // Delete the user-selected item from the context
-        let viewContext = store.persistentContainer.viewContext
-        viewContext.delete(items[index])
-        
-        // Delete the user-selected item from the data source
+
+        ItemStore.shared.delete(object: items[index])
         items.remove(at: index)
         collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
-        
-        // Save changes to the Managed Object Context
-        store.saveContext()
     }
     
     private func updateDataSource() {
-        self.store.fetchPersistedData {
-            
-            (fetchItemsResult) in
+        ItemStore.shared.fetchPersistedData { (fetchItemsResult) in
             
             switch fetchItemsResult {
             case let .success(items):
@@ -106,7 +92,7 @@ class ViewController: UIViewController {
                     return print("storyboard not set up correctly")
                 }
                 
-                let newItem = createNewItem()
+                let newItem = ItemStore.shared.create()
                 itemEditorVc.item = newItem
             default: break
             }

@@ -15,6 +15,8 @@ enum FetchItemsResult {
 
 class ItemStore: NSObject {
     
+    static let shared = ItemStore()
+    
     let persistentContainer: NSPersistentContainer = {
         // creates the NSPersistentContainer object
         // must be given the name of the Core Data model file “LoanedItems”
@@ -28,7 +30,6 @@ class ItemStore: NSObject {
         }
         return container
     }()
-    
     
     // MARK: - Save Core Data Context
     public func saveContext() {
@@ -45,12 +46,27 @@ class ItemStore: NSObject {
         }
     }
     
+    public func create() -> Item{
+        
+        let newItem = NSEntityDescription.insertNewObject(forEntityName: "Item", into: persistentContainer.viewContext) as! Item
+        
+        return newItem
+    }
+    
+    func delete(object: NSManagedObject){
+        
+        persistentContainer.viewContext.delete(object)
+        saveContext()
+    }
+    
     func fetchPersistedData(completion: @escaping (FetchItemsResult) -> Void) {
         
+        // creates  a fetch request object and grab the view context
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         let viewContext = persistentContainer.viewContext
         
         do {
+            // fetches all the managed objects of type Item from the store
             let allItems = try viewContext.fetch(fetchRequest)
             completion(.success(allItems))
         } catch {
