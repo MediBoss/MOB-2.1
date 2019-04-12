@@ -22,13 +22,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        getPersistedMessage()
         iCloudSyncSwitch.addTarget(self, action: #selector(iCloudSwitchIsTapped(sender:)), for: .touchUpInside)
         saveMessageButton.addTarget(self, action: #selector(saveButtonIsTapped(with:)), for: .touchUpInside)
         deleteMessageButon.addTarget(self, action: #selector(deleteButtonIsTapped(with:)), for: .touchUpInside)
-        
     }
     
-
+    func getPersistedMessage(){
+        
+        guard let lastMessage = keychain.get("messageKey") else { return }
+        if !(lastMessage.isEmpty){
+            currentMessageLabel.text = lastMessage ?? "..."
+        }
+    }
+    
     @objc func iCloudSwitchIsTapped(sender: UISwitch){
         
         if sender.isOn{

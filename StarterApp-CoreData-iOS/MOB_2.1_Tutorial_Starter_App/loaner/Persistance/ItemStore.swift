@@ -19,7 +19,7 @@ class ItemStore: NSObject {
     
     let persistentContainer: NSPersistentContainer = {
         // creates the NSPersistentContainer object
-        // must be given the name of the Core Data model file “LoanedItems”
+        // must be given the name of the Core Data model file “LoanedItems”2
         let container = NSPersistentContainer(name: "LoanedItems")
         
         // load the saved database if it exists, creates it if it does not, and returns an error under failure conditions
