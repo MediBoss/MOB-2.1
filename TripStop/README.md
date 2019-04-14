@@ -59,15 +59,13 @@ List which APIs or external services will your app use?
 
 
 ### Views, View Controllers, and other Classes
-* **Views**
-  list all views you will need
   
 * **View Controllers**
     
-  list all view controllers you will need
- 
-* **Other Classes**
-  list any other classes you will need
+  * HomePageViewController
+  * TripDetailViewController
+  * AddTripViewController
+  * AddWayPointViewController
   
 
 ### Data models
