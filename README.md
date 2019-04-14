@@ -14,7 +14,8 @@ Notes, Exercises, and projects for my <a href="https://github.com/Make-School-Co
 * Core Data
 
 
-### Outcomes
+### Learning objectives
+
 * Core Data
 * NSCoder
 * Realm
