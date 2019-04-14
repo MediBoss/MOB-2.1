@@ -1,0 +1,20 @@
+PODS:
+  - KeychainSwift (13.0.0)
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - KeychainSwift (~> 13.0)
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - KeychainSwift
+    - SnapKit
+
+SPEC CHECKSUMS:
+  KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+
+PODFILE CHECKSUM: 472662e7630f4f882b97da49b8407716312cce47
+
+COCOAPODS: 1.6.0.beta.2

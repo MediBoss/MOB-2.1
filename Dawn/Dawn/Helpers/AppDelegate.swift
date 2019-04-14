@@ -1,13 +1,12 @@
 //
 //  AppDelegate.swift
-//  TripStop
+//  Dawn
 //
-//  Created by Medi Assumani on 4/1/19.
+//  Created by Medi Assumani on 4/13/19.
 //  Copyright © 2019 Medi Assumani. All rights reserved.
 //
 
 import UIKit
-import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,12 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        
-        showHomePage()
-        
-        
-        
         return true
     }
 
@@ -47,25 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    private func checkFirstTimeUser(){
-        
-       
-    }
-    
-    /// Configures and displays the home page
-    private func showHomePage(){
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let destinationVC = HomePageViewController()
-        let rootNavigationController = UINavigationController(rootViewController: destinationVC)
-        
-        window?.rootViewController = rootNavigationController
-        window?.makeKeyAndVisible()
-    }
-    
-    private func showLoginPage(){
-        
-    }
+
+
 }
 
