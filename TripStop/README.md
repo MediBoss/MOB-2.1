@@ -16,6 +16,12 @@
 
 The goal for this project is to build an iOS app that allows users to plan trips. Users can create trips and trips are defined by a collection of waypoints. Waypoints are represented by a geographic coordinate and a name. Users should be able to create, delete and modify trips.
 
+### Goals
+
+* Understand and apply different client side caching systems.
+* TDD.
+* Code cleaness with SwiftLint.
+* Custom backend to build a fullstack ios app.
 
 ### User Experience
 
