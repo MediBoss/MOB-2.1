@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9E0578106B30D1736FCFA598 /* Pods_TripStopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1D9CE930E85A7E4B738BBE /* Pods_TripStopTests.framework */; };
 		A9A51439DDC75071A3F29202 /* Pods_TripStop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8582B4FA6ED5B68DE4345D0 /* Pods_TripStop.framework */; };
+		B81F654E22666FA20047E8E2 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F654D22666FA20047E8E2 /* Trip.swift */; };
+		B81F655022666FC00047E8E2 /* Waypoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F654F22666FC00047E8E2 /* Waypoint.swift */; };
 		B866286E2263BDBC00734189 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866286D2263BDBC00734189 /* HomePageViewController.swift */; };
 		B86628702263BFC500734189 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866286F2263BFC500734189 /* Helper.swift */; };
 		B86628722263EF0400734189 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86628712263EF0400734189 /* TripTableViewCell.swift */; };
@@ -51,6 +53,8 @@
 		6B774551E87DD9BB765C3248 /* Pods-TripStopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripStopTests.release.xcconfig"; path = "Target Support Files/Pods-TripStopTests/Pods-TripStopTests.release.xcconfig"; sourceTree = "<group>"; };
 		7EE4B287D62C8E7043D664B3 /* Pods-TripStopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripStopTests.debug.xcconfig"; path = "Target Support Files/Pods-TripStopTests/Pods-TripStopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B628AAEEDD3691CB61A97ED /* Pods-TripStopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripStopUITests.debug.xcconfig"; path = "Target Support Files/Pods-TripStopUITests/Pods-TripStopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B81F654D22666FA20047E8E2 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		B81F654F22666FC00047E8E2 /* Waypoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waypoint.swift; sourceTree = "<group>"; };
 		B8582B4FA6ED5B68DE4345D0 /* Pods_TripStop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TripStop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B866286D2263BDBC00734189 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		B866286F2263BFC500734189 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				B89E1FB52263B77600E31329 /* User.swift */,
+				B81F654D22666FA20047E8E2 /* Trip.swift */,
+				B81F654F22666FC00047E8E2 /* Waypoint.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -474,6 +480,8 @@
 				B866286E2263BDBC00734189 /* HomePageViewController.swift in Sources */,
 				B86628742263F43600734189 /* AddTripViewController.swift in Sources */,
 				B86F95E92252CCCC00933050 /* TripStop.xcdatamodeld in Sources */,
+				B81F654E22666FA20047E8E2 /* Trip.swift in Sources */,
+				B81F655022666FC00047E8E2 /* Waypoint.swift in Sources */,
 				B86628702263BFC500734189 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
