@@ -19,6 +19,7 @@ class AddTripViewController: UIViewController {
         return label
     }()
     
+    
     lazy var tripNameTextField: UITextField = {
         
         let textField = UITextField()
@@ -49,8 +50,18 @@ class AddTripViewController: UIViewController {
         titleLabel.backgroundColor = .white
         
         navigationItem.titleView = titleLabel
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(addTripButtonTapped(_:)))
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.alpha = 1
+    }
+    
+    @objc private func addTripButtonTapped(_ sender: UIBarButtonItem){
+        
+        guard let tripName = tripNameTextField.text else { return }
+        let trip = Trip(name: tripName)
+        
+        NotificationCenter.default.post(name: .didReceivedTripObject, object: trip)
+        navigationController?.popViewController(animated: true)
     }
     
     private func mainAutoLayout(){

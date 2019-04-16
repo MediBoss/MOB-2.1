@@ -11,6 +11,10 @@ import Foundation
 struct Trip {
     
     var name: String?
-    var waypoint: [Waypoint]?
+    var waypoints: [Waypoint]?
     
+    init(name: String){
+        self.name = name
+        self.waypoints = nil
+    }
 }

@@ -10,8 +10,22 @@ import Foundation
 import SnapKit
 import UIKit
 
+extension Notification.Name {
+    static let didReceivedTripObject = Notification.Name("didReceivedTripObject")
+}
+
 class HomePageViewController: UIViewController {
 
+    var trips = [Trip](){
+        didSet{
+            tripsTableView.reloadData()
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .didReceivedTripObject, object: Trip.self)
+    }
+    
     lazy var tripsTableView: UITableView = {
        
         let tableview = UITableView()
@@ -33,8 +47,16 @@ class HomePageViewController: UIViewController {
         setUpNavBar()
         layoutTableView()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidRecieveTripObject(_:)), name: .didReceivedTripObject, object: nil)
     }
     
+    
+    @objc private func onDidRecieveTripObject(_ sender: Notification){
+        
+        if let trip = sender.object as? Trip {
+            self.trips.append(trip)
+        }
+    }
     
     private func setUpNavBar(){
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
@@ -69,12 +91,15 @@ extension HomePageViewController: UITableViewDataSource, UITableViewDelegate {
     // - MARK: UITableView Data Source Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 10
+        return trips.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let tripCell = tripsTableView.dequeueReusableCell(withIdentifier: TripTableViewCell.identifier, for: indexPath) as! TripTableViewCell
+        
+        let currentTrip = trips[indexPath.row]
+        tripCell.tripNameLabel.text = currentTrip.name
         
         return tripCell
     }
