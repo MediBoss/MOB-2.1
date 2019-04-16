@@ -11,24 +11,33 @@ import XCTest
 
 class TripStopTests: XCTestCase {
 
+    var tripUnderTest: Trip!
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        tripUnderTest = Trip(name: "Trip To Germany")
+        
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
+        tripUnderTest = nil
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testTripModel() {
+        
+        XCTAssertNil(tripUnderTest.waypoints)
+        XCTAssertNotNil(tripUnderTest.name)
+        XCTAssertEqual(tripUnderTest.name, "Trip To Germany")
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    
+    
+//    func testPerformanceExample() {
+//        // This is an example of a performance test case.
+//        self.measure {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
 
 }
