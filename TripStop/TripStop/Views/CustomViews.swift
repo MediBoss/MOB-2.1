@@ -122,3 +122,22 @@ class CustomButton: UIButton{
         self.titleLabel!.font = UIFont(name: titleFontName, size: fontSize)
     }
 }
+
+class CustomTableView: UITableView {
+    
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    convenience init(dataSource: Any, delegate: Any, cellClassToRegister: Any?, cellID: String) {
+        
+        self.init()
+        self.dataSource = dataSource as? UITableViewDataSource
+        self.delegate = delegate as? UITableViewDelegate
+        self.translatesAutoresizingMaskIntoConstraints = false
+    }
+}

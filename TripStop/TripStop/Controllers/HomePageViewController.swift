@@ -103,4 +103,13 @@ extension HomePageViewController: UITableViewDataSource, UITableViewDelegate {
         
         return tripCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedTrip = trips[indexPath.row]
+        let destinationVC = TripDetailsViewController()
+        
+        destinationVC.currentTrip = selectedTrip
+        navigationController?.pushViewController(destinationVC, animated: true)
+    }
 }

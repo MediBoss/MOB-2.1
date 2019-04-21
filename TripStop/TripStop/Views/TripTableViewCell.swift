@@ -13,7 +13,7 @@ class TripTableViewCell: UITableViewCell {
 
     // - MARK: Class Properties
     static let identifier = "tripCellID"
-    open var tripNameLabel = CustomLabel(fontSize: 10, text: "", textColor: .black, textAlignment: .center, fontName: "Helvetica-Medoum")
+    lazy var tripNameLabel = CustomLabel(fontSize: 10, text: "", textColor: .black, textAlignment: .center, fontName: "Helvetica-Medoum")
     
     // - MARK: Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
