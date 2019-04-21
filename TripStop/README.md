@@ -1,17 +1,5 @@
 # TripStop
 
-## Table of Contents
-  * [App Design](#App-design)
-    * [Objective](#Objective)
-    * [Audience](#Audience)
-    * [User Experience](#user-experience)
-  * [Technical](#technical)
-    * [Screens](#Screens)
-    * [External services](#external-services)
-    * [Views, View Controllers, and other Classes](#Views-View-Controllers-and-other-Classes)
-
----
-
 ### Objective
 
 The goal for this project is to build an iOS app that allows users to plan trips. Users can create trips and trips are defined by a collection of waypoints. Waypoints are represented by a geographic coordinate and a name. Users should be able to create, delete and modify trips.
@@ -20,25 +8,9 @@ The goal for this project is to build an iOS app that allows users to plan trips
 
 * Understand and apply different client side caching systems.
 * TDD.
+* Learn more about the UIKIT framework(Search bar, tab bar, etc..)
 * Code cleaness with SwiftLint.
 * Custom backend to build a fullstack ios app.
-
-### User Experience
-
-#### Action 1 -   
-
-When the user boots up the app, the will see a list of trips they have created
-
-#### Action 2 - 
-
-When the user clicks on a trip, they will see all the waypoints associated with the trip.
-
-#### Action 3 - 
-When the user clicks on "+", they can add a way point by choosing a location in the map.
-
-[Back to top ^](#)
-
----
 
 ### Technologies
 
