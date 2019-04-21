@@ -6,12 +6,14 @@
 //  Copyright © 2019 Medi Assumani. All rights reserved.
 //
 
+import MapKit
 import UIKit
 
 class AddWaypointViewController: UIViewController {
 
     
     lazy var waypointSearchController = UISearchController(searchResultsController: nil)
+    lazy var mapView = MKMapView.init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,10 @@ class AddWaypointViewController: UIViewController {
         view.backgroundColor = .white
         setUpSeachController()
         setUpNavigationBarItems()
+        view.addSubview(mapView)
+        mapView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
     
     // - MARK: Private instance methods
@@ -34,7 +40,8 @@ class AddWaypointViewController: UIViewController {
     
     private func setUpSeachController() {
         
-        waypointSearchController.searchResultsUpdater = self
+        let locationSerachtable = SearchResultTableViewController()
+        waypointSearchController.searchResultsUpdater = locationSerachtable as? UISearchResultsUpdating
         waypointSearchController.obscuresBackgroundDuringPresentation = false
         waypointSearchController.searchBar.placeholder = "Search Waypoint"
         navigationItem.searchController = waypointSearchController
@@ -51,9 +58,4 @@ class AddWaypointViewController: UIViewController {
     }
 }
 
-extension AddWaypointViewController: UISearchResultsUpdating {
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        // TODO - Updated search based on Google Place API
-    }
-}
+

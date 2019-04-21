@@ -6,24 +6,21 @@
 //  Copyright © 2019 Medi Assumani. All rights reserved.
 //
 
+import CoreLocation
 import Foundation
-import SnapKit
 import UIKit
 
 extension Notification.Name {
     static let didReceivedTripObject = Notification.Name("didReceivedTripObject")
 }
 
-class HomePageViewController: UIViewController {
+class HomePageViewController: UIViewController, CLLocationManagerDelegate {
 
+    let locationManager = CLLocationManager()
     var trips = [Trip](){
         didSet{
             tripsTableView.reloadData()
         }
-    }
-    
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .didReceivedTripObject, object: Trip.self)
     }
     
     lazy var tripsTableView: UITableView = {
@@ -37,6 +34,7 @@ class HomePageViewController: UIViewController {
         
         return tableview
     }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +44,13 @@ class HomePageViewController: UIViewController {
 
         setUpNavBar()
         layoutTableView()
+        getUserCoordinates()
         
         NotificationCenter.default.addObserver(self, selector: #selector(onDidRecieveTripObject(_:)), name: .didReceivedTripObject, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .didReceivedTripObject, object: Trip.self)
     }
     
     
@@ -82,6 +85,16 @@ class HomePageViewController: UIViewController {
         
         let destinationVC = AddTripViewController()
         navigationController?.show(destinationVC, sender: nil)
+    }
+    
+    /// Propmt the user to grant access to the device's current location
+    private func getUserCoordinates(){
+        self.locationManager.requestAlwaysAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
     
 }
