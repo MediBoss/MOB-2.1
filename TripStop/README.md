@@ -48,7 +48,6 @@ List which APIs or external services will your app use?
 
 ### Data models
 
-list all data models your app will need
 * User
     * First name
     * Last name
@@ -63,6 +62,7 @@ list all data models your app will need
     * Coordinates
 
 ### Services
+
 * User Service
     * Create
     * Read
