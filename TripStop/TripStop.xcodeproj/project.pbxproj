@@ -21,13 +21,11 @@
 		B86628722263EF0400734189 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86628712263EF0400734189 /* TripTableViewCell.swift */; };
 		B86628742263F43600734189 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86628732263F43600734189 /* AddTripViewController.swift */; };
 		B86F95E12252CCCC00933050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F95E02252CCCC00933050 /* AppDelegate.swift */; };
-		B86F95E32252CCCC00933050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F95E22252CCCC00933050 /* ViewController.swift */; };
-		B86F95E62252CCCC00933050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B86F95E42252CCCC00933050 /* Main.storyboard */; };
 		B86F95E92252CCCC00933050 /* TripStop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B86F95E72252CCCC00933050 /* TripStop.xcdatamodeld */; };
 		B86F95EB2252CCCE00933050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B86F95EA2252CCCE00933050 /* Assets.xcassets */; };
-		B86F95EE2252CCCE00933050 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B86F95EC2252CCCE00933050 /* LaunchScreen.storyboard */; };
 		B86F95F92252CCCE00933050 /* TripStopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F95F82252CCCE00933050 /* TripStopTests.swift */; };
 		B86F96042252CCCE00933050 /* TripStopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F96032252CCCE00933050 /* TripStopUITests.swift */; };
+		B8718BB6226D05C100240253 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8718BB5226D05C100240253 /* LocationServices.swift */; };
 		B89E1FB62263B77600E31329 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E1FB52263B77600E31329 /* User.swift */; };
 		F8EFB7253D4BC9441DA83894 /* Pods_TripStopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DDB6C12FF289E8A0974570 /* Pods_TripStopUITests.framework */; };
 /* End PBXBuildFile section */
@@ -72,11 +70,8 @@
 		B86628732263F43600734189 /* AddTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		B86F95DD2252CCCC00933050 /* TripStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86F95E02252CCCC00933050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B86F95E22252CCCC00933050 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B86F95E52252CCCC00933050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B86F95E82252CCCC00933050 /* TripStop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripStop.xcdatamodel; sourceTree = "<group>"; };
 		B86F95EA2252CCCE00933050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B86F95ED2252CCCE00933050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B86F95EF2252CCCE00933050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B86F95F42252CCCE00933050 /* TripStopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripStopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86F95F82252CCCE00933050 /* TripStopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStopTests.swift; sourceTree = "<group>"; };
@@ -84,6 +79,7 @@
 		B86F95FF2252CCCE00933050 /* TripStopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripStopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86F96032252CCCE00933050 /* TripStopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStopUITests.swift; sourceTree = "<group>"; };
 		B86F96052252CCCE00933050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8718BB5226D05C100240253 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		B89E1FB52263B77600E31329 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +149,7 @@
 		B86F95DF2252CCCC00933050 /* TripStop */ = {
 			isa = PBXGroup;
 			children = (
+				B8718BB4226D05AA00240253 /* Services */,
 				B86F96172252E5E600933050 /* Supporting Files */,
 				B86F96162252E5DF00933050 /* Helpers */,
 				B86F96152252E5D400933050 /* Caching */,
@@ -160,13 +157,7 @@
 				B86F96132252E5C500933050 /* Controllers */,
 				B86F96122252E5C000933050 /* Views */,
 				B86F96112252E5B900933050 /* Models */,
-				B86F95E02252CCCC00933050 /* AppDelegate.swift */,
-				B86F95E22252CCCC00933050 /* ViewController.swift */,
-				B86F95E42252CCCC00933050 /* Main.storyboard */,
-				B86F95EA2252CCCE00933050 /* Assets.xcassets */,
-				B86F95EC2252CCCE00933050 /* LaunchScreen.storyboard */,
 				B86F95EF2252CCCE00933050 /* Info.plist */,
-				B86F95E72252CCCC00933050 /* TripStop.xcdatamodeld */,
 			);
 			path = TripStop;
 			sourceTree = "<group>";
@@ -231,6 +222,7 @@
 		B86F96152252E5D400933050 /* Caching */ = {
 			isa = PBXGroup;
 			children = (
+				B86F95E72252CCCC00933050 /* TripStop.xcdatamodeld */,
 			);
 			path = Caching;
 			sourceTree = "<group>";
@@ -246,8 +238,18 @@
 		B86F96172252E5E600933050 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B86F95E02252CCCC00933050 /* AppDelegate.swift */,
+				B86F95EA2252CCCE00933050 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8718BB4226D05AA00240253 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B8718BB5226D05C100240253 /* LocationServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		ED6264C28468593113C4EE8E /* Frameworks */ = {
@@ -368,9 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B86F95EE2252CCCE00933050 /* LaunchScreen.storyboard in Resources */,
 				B86F95EB2252CCCE00933050 /* Assets.xcassets in Resources */,
-				B86F95E62252CCCC00933050 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +492,6 @@
 				B86628722263EF0400734189 /* TripTableViewCell.swift in Sources */,
 				B83EE96022691ACF00F921EF /* WayPointTableViewCell.swift in Sources */,
 				B83EE95E2269129F00F921EF /* TripDetailsViewController.swift in Sources */,
-				B86F95E32252CCCC00933050 /* ViewController.swift in Sources */,
 				B851CA2F226BDD01008F5E8E /* AddWaypointViewController.swift in Sources */,
 				B86F95E12252CCCC00933050 /* AppDelegate.swift in Sources */,
 				B866286E2263BDBC00734189 /* HomePageViewController.swift in Sources */,
@@ -502,6 +501,7 @@
 				B81F655022666FC00047E8E2 /* Waypoint.swift in Sources */,
 				B81F655222667EEC0047E8E2 /* CustomViews.swift in Sources */,
 				B851CA31226BDFD0008F5E8E /* WaypointDetailViewController.swift in Sources */,
+				B8718BB6226D05C100240253 /* LocationServices.swift in Sources */,
 				B86628702263BFC500734189 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,25 +536,6 @@
 			targetProxy = B86F96002252CCCE00933050 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B86F95E42252CCCC00933050 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B86F95E52252CCCC00933050 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B86F95EC2252CCCE00933050 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B86F95ED2252CCCE00933050 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B86F96062252CCCE00933050 /* Debug */ = {

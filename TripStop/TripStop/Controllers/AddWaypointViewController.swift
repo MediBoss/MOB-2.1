@@ -46,7 +46,8 @@ class AddWaypointViewController: UIViewController {
     }
     
     @objc private func cancelButtonIsTapped(_ sender: UIBarButtonItem) {
-        print("cancel button is tapped")
+    
+        navigationController?.popViewController(animated: true)
     }
 }
 

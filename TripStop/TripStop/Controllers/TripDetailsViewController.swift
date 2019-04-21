@@ -6,12 +6,21 @@
 //  Copyright © 2019 Medi Assumani. All rights reserved.
 //
 
-import SnapKit
+import CoreLocation
 import UIKit
+
 
 class TripDetailsViewController: UIViewController {
 
+    
     var currentTrip: Trip?
+    var waypoints = [
+        
+        Waypoint(name: "Newark, NJ", coordinates: CLLocationCoordinate2D(latitude: 40.7357, longitude: -74.1724)),
+        Waypoint(name: "Chelsea, NY", coordinates: CLLocationCoordinate2D(latitude: 40.7357, longitude: -74.1724)),
+        Waypoint(name: "Tulsa, OKC", coordinates: CLLocationCoordinate2D(latitude: 40.7357, longitude: -74.1724)),
+        Waypoint(name: "San Francisco, CA", coordinates: CLLocationCoordinate2D(latitude: 40.7357, longitude: -74.1724))
+    ]
     
     lazy var waypointTableView: UITableView = {
         
@@ -37,7 +46,7 @@ class TripDetailsViewController: UIViewController {
     private func setUpNavigationBarItems(){
         
         guard let title = currentTrip?.name else { return }
-        navigationItem.title = title
+        navigationItem.title = "Your Trip: \(title)"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Waypoint", style: .done, target: self, action: #selector(addWaypointButonTapped(_:)))
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.alpha = 1
@@ -62,13 +71,14 @@ class TripDetailsViewController: UIViewController {
 extension TripDetailsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return waypoints.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = waypointTableView.dequeueReusableCell(withIdentifier: WayPointTableViewCell.identifier, for: indexPath)
-        
+        let cell = waypointTableView.dequeueReusableCell(withIdentifier: WayPointTableViewCell.identifier, for: indexPath) as! WayPointTableViewCell
+        let currentWaypoint = waypoints[indexPath.row]
+        cell.waypointNameLabel.text = currentWaypoint.name
         return cell
     }
     
@@ -82,6 +92,9 @@ extension TripDetailsViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        let destinationVC = WaypointDetailViewController()
+        let selectedWaypoint = waypoints[indexPath.row]
+        destinationVC.waypoint = selectedWaypoint
+        navigationController?.pushViewController(destinationVC, animated: true)
     }
 }
