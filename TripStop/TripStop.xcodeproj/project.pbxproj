@@ -28,6 +28,7 @@
 		B8718BB6226D05C100240253 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8718BB5226D05C100240253 /* LocationServices.swift */; };
 		B8718BB8226D0E8900240253 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8718BB7226D0E8900240253 /* SearchResultTableViewController.swift */; };
 		B89E1FB62263B77600E31329 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89E1FB52263B77600E31329 /* User.swift */; };
+		B8A685D622727B2B00297127 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A685D522727B2B00297127 /* SearchTableViewCell.swift */; };
 		F8EFB7253D4BC9441DA83894 /* Pods_TripStopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DDB6C12FF289E8A0974570 /* Pods_TripStopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		B8718BB5226D05C100240253 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		B8718BB7226D0E8900240253 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 		B89E1FB52263B77600E31329 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B8A685D522727B2B00297127 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +200,7 @@
 				B86628712263EF0400734189 /* TripTableViewCell.swift */,
 				B81F655122667EEC0047E8E2 /* CustomViews.swift */,
 				B83EE95F22691ACF00F921EF /* WayPointTableViewCell.swift */,
-				B8718BB7226D0E8900240253 /* SearchResultTableViewController.swift */,
+				B8A685D522727B2B00297127 /* SearchTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +213,7 @@
 				B83EE95D2269129F00F921EF /* TripDetailsViewController.swift */,
 				B851CA2E226BDD01008F5E8E /* AddWaypointViewController.swift */,
 				B851CA30226BDFD0008F5E8E /* WaypointDetailViewController.swift */,
+				B8718BB7226D0E8900240253 /* SearchResultTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				B86F95E92252CCCC00933050 /* TripStop.xcdatamodeld in Sources */,
 				B81F654E22666FA20047E8E2 /* Trip.swift in Sources */,
 				B81F655022666FC00047E8E2 /* Waypoint.swift in Sources */,
+				B8A685D622727B2B00297127 /* SearchTableViewCell.swift in Sources */,
 				B81F655222667EEC0047E8E2 /* CustomViews.swift in Sources */,
 				B8718BB8226D0E8900240253 /* SearchResultTableViewController.swift in Sources */,
 				B851CA31226BDFD0008F5E8E /* WaypointDetailViewController.swift in Sources */,

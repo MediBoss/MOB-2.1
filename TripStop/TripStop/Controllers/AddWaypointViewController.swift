@@ -14,6 +14,7 @@ class AddWaypointViewController: UIViewController {
     let locationSearchTable = SearchResultTableViewController()
     var waypointSearchController: UISearchController? = nil
     lazy var mapView = MKMapView.init()
+    var wayPoint: Waypoint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +52,7 @@ class AddWaypointViewController: UIViewController {
     }
     
     @objc private func saveWaypointButtonTapped(_ sender: UIBarButtonItem) {
-        print("save button tapped")
+        // save button is tapped
     }
     
     @objc private func cancelButtonIsTapped(_ sender: UIBarButtonItem) {

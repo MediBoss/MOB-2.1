@@ -34,6 +34,26 @@ class SearchResultTableViewController: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // zoom into that location
+        let selectedWaypoint = matchingItems[indexPath.row].placemark
+        let parsedAddress = LocationServices.shared.parseAddress(selectedItem: selectedWaypoint)
+        LocationServices.shared.addressToCoordinate(parsedAddress) { (coordinates) in
+            DispatchQueue.main.async {
+                
+                guard let coordinates = coordinates, let name = selectedWaypoint.name else { return }
+                LocationServices.shared.centerLocationOnMap(coordinates: coordinates,
+                                                            annotationTitle: name,
+                                                            map: self.mapView!)
+                
+                
+                let destinationVC  = AddWaypointViewController()
+                destinationVC.wayPoint = Waypoint(name: name, coordinates: coordinates)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
 }
 
 extension SearchResultTableViewController: UISearchResultsUpdating {
@@ -53,17 +73,5 @@ extension SearchResultTableViewController: UISearchResultsUpdating {
                 self.tableView.reloadData()
             }
         }
-    }
-}
-
-class SearchTableViewCell: UITableViewCell{
-    
-    static let identifier = "SearachTableViewCellID"
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: SearchTableViewCell.identifier)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
