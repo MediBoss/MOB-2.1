@@ -45,6 +45,7 @@ class AddWaypointViewController: UIViewController {
         waypointSearchController?.obscuresBackgroundDuringPresentation = false
         waypointSearchController?.searchBar.placeholder = "Search Waypoint"
         waypointSearchController?.hidesNavigationBarDuringPresentation = false
+        locationSearchTable.mapView = mapView
         navigationItem.searchController = waypointSearchController
         definesPresentationContext = true
     }
