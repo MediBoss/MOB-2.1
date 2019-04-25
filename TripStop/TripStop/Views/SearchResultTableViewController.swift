@@ -30,7 +30,7 @@ class SearchResultTableViewController: UITableViewController {
         let selectedItem = matchingItems[indexPath.row].placemark
         
         cell.textLabel?.text = selectedItem.name
-        cell.detailTextLabel?.text = ""
+        cell.detailTextLabel?.text = LocationServices.shared.parseAddress(selectedItem: selectedItem)
         
         return cell
     }

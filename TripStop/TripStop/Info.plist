@@ -41,5 +41,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location will be used to calculate the distance to a waypoint.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>You do not need this.</string>
 </dict>
 </plist>

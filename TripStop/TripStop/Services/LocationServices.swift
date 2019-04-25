@@ -55,4 +55,23 @@ struct LocationServices{
         targetLocationAnnotation.coordinate = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
         map.addAnnotation(targetLocationAnnotation)
     }
+    
+    
+    /** Converts a placemark to a custom readable address format like: "555 Post Street, San Francisco, CA"
+     @param ->  selectedItem : the placemark object that contains a location's information
+     @return ->  addressLine : a string format of the address
+     **/
+    func parseAddress(selectedItem: MKPlacemark) -> String {
+        
+        let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : ""
+        let comma = (selectedItem.subThoroughfare != nil || selectedItem.thoroughfare != nil) && (selectedItem.subAdministrativeArea != nil || selectedItem.administrativeArea != nil) ? ", " : ""
+        
+        let secondSpace = (selectedItem.subAdministrativeArea != nil && selectedItem.administrativeArea != nil) ? " " : ""
+        let addressLine = String(format:"%@%@%@%@%@%@%@", selectedItem.subThoroughfare ?? "", firstSpace, selectedItem.thoroughfare ?? "",
+                                 comma,
+                                 selectedItem.locality ?? "",
+                                 secondSpace,
+                                 selectedItem.administrativeArea ?? "")
+        return addressLine
+    }
 }
