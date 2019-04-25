@@ -11,8 +11,8 @@ import UIKit
 
 class AddWaypointViewController: UIViewController {
 
-    
-    lazy var waypointSearchController = UISearchController(searchResultsController: nil)
+    let locationSearchTable = SearchResultTableViewController()
+    var waypointSearchController: UISearchController? = nil
     lazy var mapView = MKMapView.init()
     
     override func viewDidLoad() {
@@ -40,10 +40,11 @@ class AddWaypointViewController: UIViewController {
     
     private func setUpSeachController() {
         
-        let locationSerachtable = SearchResultTableViewController()
-        waypointSearchController.searchResultsUpdater = locationSerachtable as? UISearchResultsUpdating
-        waypointSearchController.obscuresBackgroundDuringPresentation = false
-        waypointSearchController.searchBar.placeholder = "Search Waypoint"
+        waypointSearchController = UISearchController(searchResultsController: locationSearchTable)
+        waypointSearchController?.searchResultsUpdater = locationSearchTable
+        waypointSearchController?.obscuresBackgroundDuringPresentation = false
+        waypointSearchController?.searchBar.placeholder = "Search Waypoint"
+        waypointSearchController?.hidesNavigationBarDuringPresentation = false
         navigationItem.searchController = waypointSearchController
         definesPresentationContext = true
     }
