@@ -8,6 +8,8 @@ target 'TripStop' do
   # Pods for TripStop
   pod 'KeychainSwift','~> 13.0'
   pod 'SnapKit'
+  pod 'Firebase/Core'
+
   target 'TripStopTests' do
     inherit! :search_paths
     # Pods for testing

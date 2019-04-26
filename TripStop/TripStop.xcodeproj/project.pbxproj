@@ -28,6 +28,7 @@
 		B8718BB6226D05C100240253 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8718BB5226D05C100240253 /* LocationServices.swift */; };
 		B8718BB8226D0E8900240253 /* SearchResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8718BB7226D0E8900240253 /* SearchResultTableViewController.swift */; };
 		B8A685D622727B2B00297127 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A685D522727B2B00297127 /* SearchTableViewCell.swift */; };
+		B8CB1CA92272892D00E4DF3A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8CB1CA82272892C00E4DF3A /* GoogleService-Info.plist */; };
 		F8EFB7253D4BC9441DA83894 /* Pods_TripStopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DDB6C12FF289E8A0974570 /* Pods_TripStopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		B8718BB5226D05C100240253 /* LocationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServices.swift; sourceTree = "<group>"; };
 		B8718BB7226D0E8900240253 /* SearchResultTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewController.swift; sourceTree = "<group>"; };
 		B8A685D522727B2B00297127 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		B8CB1CA82272892C00E4DF3A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				B86F96122252E5C000933050 /* Views */,
 				B86F96112252E5B900933050 /* Models */,
 				B86F95EF2252CCCE00933050 /* Info.plist */,
+				B8CB1CA82272892C00E4DF3A /* GoogleService-Info.plist */,
 			);
 			path = TripStop;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B86F95EB2252CCCE00933050 /* Assets.xcassets in Resources */,
+				B8CB1CA92272892D00E4DF3A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,15 +473,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TripStop/Pods-TripStop-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
