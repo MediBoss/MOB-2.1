@@ -59,7 +59,7 @@ class ItemStore: NSObject {
         saveContext()
     }
     
-    func fetchPersistedData(completion: @escaping (FetchItemsResult) -> Void) {
+    func fetchPersistedData(completion: @escaping (FetchItemsResult) -> ()) {
         
         // creates  a fetch request object and grab the view context
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
