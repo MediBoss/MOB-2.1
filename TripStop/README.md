@@ -7,7 +7,6 @@ The goal for this project is to build an iOS app that allows users to plan trips
 ### Goals
 
 * Understand and apply different client side caching systems.
-* TDD.
 * Learn more about the UIKIT framework(Search bar, tab bar, etc..)
 * Code cleaness with SwiftLint.
 * Custom backend to build a fullstack ios app.
