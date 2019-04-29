@@ -6,8 +6,10 @@
 //  Copyright © 2019 Medi Assumani. All rights reserved.
 //
 
-import UIKit
 import CoreData
+import Firebase
+import UIKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,9 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
+        FirebaseApp.configure()
         showHomePage()
-        
-        
         
         return true
     }
