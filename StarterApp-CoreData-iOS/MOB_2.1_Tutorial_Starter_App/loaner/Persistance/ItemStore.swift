@@ -4,7 +4,6 @@
 //
 //  Created by Medi Assumani on 4/9/19.
 //  Copyright © 2019 LinnierGames. All rights reserved.
-//
 
 import CoreData
 
