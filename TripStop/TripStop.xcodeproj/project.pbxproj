@@ -10,6 +10,11 @@
 		9E0578106B30D1736FCFA598 /* Pods_TripStopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D1D9CE930E85A7E4B738BBE /* Pods_TripStopTests.framework */; };
 		A9A51439DDC75071A3F29202 /* Pods_TripStop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8582B4FA6ED5B68DE4345D0 /* Pods_TripStop.framework */; };
 		B81F655222667EEC0047E8E2 /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81F655122667EEC0047E8E2 /* CustomViews.swift */; };
+		B825EED32278E4550042D1A9 /* Waypoint+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825EECF2278E4550042D1A9 /* Waypoint+CoreDataClass.swift */; };
+		B825EED42278E4550042D1A9 /* Waypoint+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825EED02278E4550042D1A9 /* Waypoint+CoreDataProperties.swift */; };
+		B825EED52278E4550042D1A9 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825EED12278E4550042D1A9 /* Trip+CoreDataClass.swift */; };
+		B825EED62278E4550042D1A9 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825EED22278E4550042D1A9 /* Trip+CoreDataProperties.swift */; };
+		B825EED82278F1E60042D1A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B825EED72278F1E60042D1A9 /* Assets.xcassets */; };
 		B8377D6222763C1B009AB0D1 /* FirebaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8377D6122763C1B009AB0D1 /* FirebaseReference.swift */; };
 		B8377D64227642D5009AB0D1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8377D63227642D5009AB0D1 /* CoreDataStack.swift */; };
 		B83EE95E2269129F00F921EF /* TripDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B83EE95D2269129F00F921EF /* TripDetailsViewController.swift */; };
@@ -22,7 +27,6 @@
 		B86628742263F43600734189 /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86628732263F43600734189 /* AddTripViewController.swift */; };
 		B86F95E12252CCCC00933050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F95E02252CCCC00933050 /* AppDelegate.swift */; };
 		B86F95E92252CCCC00933050 /* userTrips.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B86F95E72252CCCC00933050 /* userTrips.xcdatamodeld */; };
-		B86F95EB2252CCCE00933050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B86F95EA2252CCCE00933050 /* Assets.xcassets */; };
 		B86F95F92252CCCE00933050 /* TripStopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F95F82252CCCE00933050 /* TripStopTests.swift */; };
 		B86F96042252CCCE00933050 /* TripStopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F96032252CCCE00933050 /* TripStopUITests.swift */; };
 		B8718BB6226D05C100240253 /* LocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8718BB5226D05C100240253 /* LocationServices.swift */; };
@@ -59,6 +63,11 @@
 		7EE4B287D62C8E7043D664B3 /* Pods-TripStopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripStopTests.debug.xcconfig"; path = "Target Support Files/Pods-TripStopTests/Pods-TripStopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B628AAEEDD3691CB61A97ED /* Pods-TripStopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TripStopUITests.debug.xcconfig"; path = "Target Support Files/Pods-TripStopUITests/Pods-TripStopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B81F655122667EEC0047E8E2 /* CustomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
+		B825EECF2278E4550042D1A9 /* Waypoint+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Waypoint+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B825EED02278E4550042D1A9 /* Waypoint+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Waypoint+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B825EED12278E4550042D1A9 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B825EED22278E4550042D1A9 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B825EED72278F1E60042D1A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8377D6122763C1B009AB0D1 /* FirebaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseReference.swift; sourceTree = "<group>"; };
 		B8377D63227642D5009AB0D1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B83EE95D2269129F00F921EF /* TripDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +82,6 @@
 		B86F95DD2252CCCC00933050 /* TripStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86F95E02252CCCC00933050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B86F95E82252CCCC00933050 /* TripStop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripStop.xcdatamodel; sourceTree = "<group>"; };
-		B86F95EA2252CCCE00933050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B86F95EF2252CCCE00933050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B86F95F42252CCCE00933050 /* TripStopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripStopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86F95F82252CCCE00933050 /* TripStopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripStopTests.swift; sourceTree = "<group>"; };
@@ -188,6 +196,10 @@
 		B86F96112252E5B900933050 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B825EECF2278E4550042D1A9 /* Waypoint+CoreDataClass.swift */,
+				B825EED02278E4550042D1A9 /* Waypoint+CoreDataProperties.swift */,
+				B825EED12278E4550042D1A9 /* Trip+CoreDataClass.swift */,
+				B825EED22278E4550042D1A9 /* Trip+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,7 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				B86F95E02252CCCC00933050 /* AppDelegate.swift */,
-				B86F95EA2252CCCE00933050 /* Assets.xcassets */,
+				B825EED72278F1E60042D1A9 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -376,7 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B86F95EB2252CCCE00933050 /* Assets.xcassets in Resources */,
+				B825EED82278F1E60042D1A9 /* Assets.xcassets in Resources */,
 				B8CB1CA92272892D00E4DF3A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,14 +518,18 @@
 				B851CA2F226BDD01008F5E8E /* AddWaypointViewController.swift in Sources */,
 				B86F95E12252CCCC00933050 /* AppDelegate.swift in Sources */,
 				B8377D6222763C1B009AB0D1 /* FirebaseReference.swift in Sources */,
+				B825EED32278E4550042D1A9 /* Waypoint+CoreDataClass.swift in Sources */,
 				B866286E2263BDBC00734189 /* HomePageViewController.swift in Sources */,
 				B86628742263F43600734189 /* AddTripViewController.swift in Sources */,
+				B825EED52278E4550042D1A9 /* Trip+CoreDataClass.swift in Sources */,
 				B86F95E92252CCCC00933050 /* userTrips.xcdatamodeld in Sources */,
 				B8A685D622727B2B00297127 /* SearchTableViewCell.swift in Sources */,
 				B81F655222667EEC0047E8E2 /* CustomViews.swift in Sources */,
 				B8718BB8226D0E8900240253 /* SearchResultTableViewController.swift in Sources */,
 				B851CA31226BDFD0008F5E8E /* WaypointDetailViewController.swift in Sources */,
 				B8718BB6226D05C100240253 /* LocationServices.swift in Sources */,
+				B825EED42278E4550042D1A9 /* Waypoint+CoreDataProperties.swift in Sources */,
+				B825EED62278E4550042D1A9 /* Trip+CoreDataProperties.swift in Sources */,
 				B86628702263BFC500734189 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

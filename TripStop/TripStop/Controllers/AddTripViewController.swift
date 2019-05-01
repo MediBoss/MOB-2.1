@@ -58,9 +58,12 @@ class AddTripViewController: UIViewController {
     @objc private func addTripButtonTapped(_ sender: UIBarButtonItem){
         
         guard let tripName = tripNameTextField.text else { return }
-        let trip = Trip(name: tripName)
         
-        NotificationCenter.default.post(name: .didReceivedTripObject, object: trip)
+        
+        
+        let trip = CoreDataStack.shared.create()
+        trip.name = tripName
+        CoreDataStack.shared.save()
         navigationController?.popViewController(animated: true)
     }
     

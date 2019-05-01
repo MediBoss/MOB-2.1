@@ -45,22 +45,25 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         setUpNavBar()
         layoutTableView()
         getUserCoordinates()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(onDidRecieveTripObject(_:)), name: .didReceivedTripObject, object: nil)
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .didReceivedTripObject, object: Trip.self)
-    }
-    
-    
-    @objc private func onDidRecieveTripObject(_ sender: Notification){
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        if let trip = sender.object as? Trip {
-            self.trips.append(trip)
+        /// Fetches and caches all the trips in memory before the view loads
+        CoreDataStack.shared.fetchTrips { (fetchedResult) in
+            
+            switch fetchedResult {
+            case let .success(fetchedTrips):
+                self.trips = fetchedTrips
+            case let .failure(error):
+                print(error)
+            }
         }
     }
     
+    
+    /// Configures and styles the navigation bar on the home page
     private func setUpNavBar(){
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         
@@ -73,14 +76,15 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         navigationController?.navigationBar.isTranslucent = false
     }
 
+    
+    /// Apply auto layout on the main table view
     private func layoutTableView() {
-        
         tripsTableView.snp.makeConstraints { (make) in
             make.edges.equalTo(view).inset(UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20))
         }
     }
     
-    
+    /// Navigates to the screen where a user can create a new trip
     @objc private func addTripButtonTapped(_ sender: UIBarButtonItem) {
         
         let destinationVC = AddTripViewController()

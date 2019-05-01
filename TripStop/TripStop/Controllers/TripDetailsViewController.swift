@@ -14,13 +14,6 @@ class TripDetailsViewController: UIViewController {
 
     
     var currentTrip: Trip?
-    var waypoints = [
-        
-        Waypoint(name: "Newark, NJ", coordinates: CLLocationCoordinate2D(latitude: 40.7357, longitude: -74.1724)),
-        Waypoint(name: "Chelsea, NY", coordinates: CLLocationCoordinate2D(latitude: 40.7357, longitude: -74.1724)),
-        Waypoint(name: "Tulsa, OKC", coordinates: CLLocationCoordinate2D(latitude: 40.7357, longitude: -74.1724)),
-        Waypoint(name: "San Francisco, CA", coordinates: CLLocationCoordinate2D(latitude: 40.7357, longitude: -74.1724))
-    ]
     
     lazy var waypointTableView: UITableView = {
         
@@ -71,14 +64,14 @@ class TripDetailsViewController: UIViewController {
 extension TripDetailsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return waypoints.count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = waypointTableView.dequeueReusableCell(withIdentifier: WayPointTableViewCell.identifier, for: indexPath) as! WayPointTableViewCell
-        let currentWaypoint = waypoints[indexPath.row]
-        cell.waypointNameLabel.text = currentWaypoint.name
+//        let currentWaypoint = waypoints[indexPath.row]
+//        cell.waypointNameLabel.text = currentWaypoint.name
         return cell
     }
     
@@ -92,9 +85,9 @@ extension TripDetailsViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let destinationVC = WaypointDetailViewController()
-        let selectedWaypoint = waypoints[indexPath.row]
-        destinationVC.waypoint = selectedWaypoint
-        navigationController?.pushViewController(destinationVC, animated: true)
+//        let destinationVC = WaypointDetailViewController()
+//        let selectedWaypoint = waypoints[indexPath.row]
+//        destinationVC.waypoint = selectedWaypoint
+//        navigationController?.pushViewController(destinationVC, animated: true)
     }
 }

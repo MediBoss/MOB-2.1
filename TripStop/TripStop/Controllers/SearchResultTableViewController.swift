@@ -49,7 +49,7 @@ class SearchResultTableViewController: UITableViewController {
                 
                 
                 let destinationVC  = AddWaypointViewController()
-                destinationVC.wayPoint = Waypoint(name: name, coordinates: coordinates)
+                //destinationVC.wayPoint = Waypoint(name: name, coordinates: coordinates)
                 self.dismiss(animated: true, completion: nil)
             }
         }
