@@ -31,6 +31,7 @@ class TripDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.waypointTableView.reloadData()
         setUpNavigationBarItems()
         
         mainAutotLayout()
@@ -48,6 +49,9 @@ class TripDetailsViewController: UIViewController {
     @objc private func addWaypointButonTapped(_ sender: UIBarButtonItem){
         
         let destinationVC = AddWaypointViewController()
+        
+        guard let unwrappedTrip = self.currentTrip else { return }
+        destinationVC.parentTrip = unwrappedTrip
         navigationController?.pushViewController(destinationVC, animated: true)
     }
     
@@ -64,19 +68,20 @@ class TripDetailsViewController: UIViewController {
 extension TripDetailsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.currentTrip?.waypoints.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = waypointTableView.dequeueReusableCell(withIdentifier: WayPointTableViewCell.identifier, for: indexPath) as! WayPointTableViewCell
-//        let currentWaypoint = waypoints[indexPath.row]
-//        cell.waypointNameLabel.text = currentWaypoint.name
+        
+        let currentWaypoint = self.currentTrip?.waypoints[indexPath.row]
+        cell.waypointNameLabel.text = currentWaypoint?.name ?? "Unknown Waypoint"
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return currentTrip?.name ?? "Unknown"
+        return "Waypoints to \(currentTrip?.name ?? "Unknown")"
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

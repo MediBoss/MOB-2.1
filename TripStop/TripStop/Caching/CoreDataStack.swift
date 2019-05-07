@@ -10,19 +10,21 @@ import CoreData
 import Foundation
 
 
-enum FetchWaypointResult {
-    case success([Waypoint])
-    case failure(Error)
-}
-
-enum fetchTripsResult {
+enum CoreDataFetchResult {
     case success([Trip])
     case failure(Error)
 }
 
+
 struct CoreDataStack {
-    
+
+    init() {}
     static let shared = CoreDataStack()
+    
+    lazy var mainContext: NSManagedObjectContext = {
+        return self.peristentContainer.viewContext
+    }()
+    
     
     let peristentContainer: NSPersistentContainer = {
         
@@ -59,34 +61,39 @@ struct CoreDataStack {
         return newObject
     }
     
+    
+    func createWaypoint() -> Waypoint{
+        let newObject = NSEntityDescription.insertNewObject(forEntityName: "Waypoint", into: peristentContainer.viewContext) as! Waypoint
+        
+        return newObject
+    }
+    
     func delete(object: NSManagedObject) {
         
         peristentContainer.viewContext.delete(object)
         save()
     }
     
-    
-    func fetchWaypoints(completion:@escaping(FetchWaypointResult) -> ()) {
+    func fetchSingleTrip() {
         
-        let fetchRequest: NSFetchRequest<Waypoint> = Waypoint.fetchRequest()
-        let viewContext = peristentContainer.viewContext
-        
-        do {
-            let allWaypoints = try viewContext.fetch(fetchRequest)
-            completion(.success(allWaypoints))
-        } catch {
-            completion(.failure(error))
-        }
     }
     
-    func fetchTrips(completion:@escaping(fetchTripsResult) -> ()) {
+    func fetchWaypoints(from trip: Trip) {
         
+        let predicate = NSPredicate(format: "<#T##String#>", <#T##args: CVarArg...##CVarArg#>)
+        let fetchRequest: NSFetchRequest<Waypoint> = Waypoint.fetchRequest()
+        
+        fetchRequest.predicate = predicate
+    }
+    
+    func fetchTrips(completion: @escaping(CoreDataFetchResult) -> ()) {
+
         let fetchRequest: NSFetchRequest<Trip> = Trip.fetchRequest()
         let viewContext = peristentContainer.viewContext
-        
+
         do {
-            let allWaypoints = try viewContext.fetch(fetchRequest)
-            completion(.success(allWaypoints))
+            let allTrips = try viewContext.fetch(fetchRequest)
+            completion(.success(allTrips))
         } catch {
             completion(.failure(error))
         }

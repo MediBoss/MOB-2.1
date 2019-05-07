@@ -6,6 +6,7 @@
 //  Copyright © 2019 Medi Assumani. All rights reserved.
 //
 
+import CoreData
 import MapKit
 import UIKit
 
@@ -15,6 +16,8 @@ class AddWaypointViewController: UIViewController {
     var waypointSearchController: UISearchController? = nil
     lazy var mapView = MKMapView.init()
     var wayPoint: Waypoint?
+    var parentTrip: Trip?
+    var waypointDetails: (String, CLLocationCoordinate2D)? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,11 @@ class AddWaypointViewController: UIViewController {
         mapView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(onDidReceiveWaypointFromSearchBar(_:)),
+                                               name: .didReceivedWaypointObject,
+                                               object: nil)
     }
     
     // - MARK: Private instance methods
@@ -51,8 +59,34 @@ class AddWaypointViewController: UIViewController {
         definesPresentationContext = true
     }
     
+    @objc private func onDidReceiveWaypointFromSearchBar(_ sender: Notification){
+
+        if let receivedWaypointDetails = sender.object as? (String, CLLocationCoordinate2D) {
+            self.waypointDetails = receivedWaypointDetails
+        }
+    }
+    
     @objc private func saveWaypointButtonTapped(_ sender: UIBarButtonItem) {
-        // save button is tapped
+        
+        navigationController?.popViewController(animated: true)
+        let entityDescription = NSEntityDescription.entity(forEntityName: "Waypoint", in: CoreDataStack.shared.peristentContainer.viewContext)
+        let context = CoreDataStack.shared.peristentContainer.viewContext
+        if let entityDescription = entityDescription {
+            var waypoint = NSManagedObject(entity: entityDescription, insertInto: context) as! Waypoint
+            
+            if let details = waypointDetails {
+                
+                let waypointName = details.0
+                let longitude = details.1.longitude
+                let latitude = details.1.latitude
+                
+                waypoint.name = waypointName
+                waypoint.coordinates = CustomCoordinates(lon: longitude, lat: latitude)
+                waypoint.trip = parentTrip!
+                parentTrip?.addToWaypoint(waypoint)
+                CoreDataStack.shared.save()
+            }
+        }
     }
     
     @objc private func cancelButtonIsTapped(_ sender: UIBarButtonItem) {

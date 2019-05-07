@@ -19,7 +19,30 @@ extension Waypoint {
     }
 
     @NSManaged public var name: String
-    @NSManaged public var coordinates: CLLocationCoordinate2D
+    @NSManaged public var coordinates: CustomCoordinates
     @NSManaged public var trip: Trip
+}
 
+public class CustomCoordinates: NSObject, NSCoding{
+    public func encode(with aCoder: NSCoder) {
+        
+        aCoder.encode(lon, forKey: "longitude")
+        aCoder.encode(lat, forKey: "latitude")
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        
+        lon = aDecoder.decodeObject(forKey: "longitude") as! Double
+        lat = aDecoder.decodeObject(forKey: "latitude") as! Double
+        super.init()
+    }
+    
+    
+    var lon: Double
+    var lat: Double
+    
+    init(lon: Double, lat: Double) {
+        self.lon = lon
+        self.lat = lat
+    }
 }

@@ -10,10 +10,6 @@ import CoreLocation
 import Foundation
 import UIKit
 
-extension Notification.Name {
-    static let didReceivedTripObject = Notification.Name("didReceivedTripObject")
-}
-
 class HomePageViewController: UIViewController, CLLocationManagerDelegate {
 
     let locationManager = CLLocationManager()
@@ -51,11 +47,11 @@ class HomePageViewController: UIViewController, CLLocationManagerDelegate {
         super.viewWillAppear(animated)
         
         /// Fetches and caches all the trips in memory before the view loads
-        CoreDataStack.shared.fetchTrips { (fetchedResult) in
+        CoreDataStack.shared.fetchTrips { (result) in
             
-            switch fetchedResult {
-            case let .success(fetchedTrips):
-                self.trips = fetchedTrips
+            switch result{
+            case let .success(trips):
+                self.trips = trips
             case let .failure(error):
                 print(error)
             }

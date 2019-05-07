@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+extension Notification.Name {
+    static let didReceivedTripObject = Notification.Name("didReceivedTripObject")
+    static let didReceivedWaypointObject = Notification.Name("didReceivedWaypointObject")
+}
+

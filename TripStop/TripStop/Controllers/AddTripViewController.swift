@@ -59,8 +59,6 @@ class AddTripViewController: UIViewController {
         
         guard let tripName = tripNameTextField.text else { return }
         
-        
-        
         let trip = CoreDataStack.shared.create()
         trip.name = tripName
         CoreDataStack.shared.save()

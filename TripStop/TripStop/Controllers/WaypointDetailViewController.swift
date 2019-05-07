@@ -24,7 +24,9 @@ class WaypointDetailViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        guard let name = waypoint?.name, let coordinates = waypoint?.coordinates else { return }
+        guard let lon = waypoint?.coordinates.lon, let lat = waypoint?.coordinates.lat, let name = waypoint?.name else { return }
+        let coordinates = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        
         LocationServices.shared.centerLocationOnMap(coordinates: coordinates, annotationTitle: name, map: mapView)
     }
 }

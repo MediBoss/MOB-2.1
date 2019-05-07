@@ -18,6 +18,6 @@ public class Waypoint: NSManagedObject {
         super.awakeFromInsert()
         
         name = "Unknowed Waypoint"
-        coordinates = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+        coordinates = CustomCoordinates(lon: 0, lat: 0)
     }
 }

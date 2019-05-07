@@ -20,7 +20,6 @@ extension Trip {
     @NSManaged public var name: String
     @NSManaged public var waypoints: [Waypoint]
     @NSManaged public var waypoint: Waypoint
-
 }
 
 // MARK: Generated accessors for waypoint
@@ -31,6 +30,7 @@ extension Trip {
 
     @objc(removeWaypointObject:)
     @NSManaged public func removeFromWaypoint(_ value: Waypoint)
+    
 
     @objc(addWaypoint:)
     @NSManaged public func addToWaypoint(_ values: NSSet)

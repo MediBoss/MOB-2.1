@@ -36,7 +36,7 @@ class SearchResultTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // zoom into that location
+        
         let selectedWaypoint = matchingItems[indexPath.row].placemark
         let parsedAddress = LocationServices.shared.parseAddress(selectedItem: selectedWaypoint)
         LocationServices.shared.addressToCoordinate(parsedAddress) { (coordinates) in
@@ -47,9 +47,9 @@ class SearchResultTableViewController: UITableViewController {
                                                             annotationTitle: name,
                                                             map: self.mapView!)
                 
+                var waypointDetails: (String, CLLocationCoordinate2D) = (name, coordinates)
                 
-                let destinationVC  = AddWaypointViewController()
-                //destinationVC.wayPoint = Waypoint(name: name, coordinates: coordinates)
+                NotificationCenter.default.post(name: .didReceivedWaypointObject, object: waypointDetails)
                 self.dismiss(animated: true, completion: nil)
             }
         }
