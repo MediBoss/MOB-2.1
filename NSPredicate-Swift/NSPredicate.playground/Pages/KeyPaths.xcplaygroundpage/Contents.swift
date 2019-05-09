@@ -38,7 +38,8 @@ people.filtered(using: allInSF)
 💻 __EXERCISE__: filter all people living in New York
 
 */
-
+let allInNYC = NSPredicate(format: "%K = %@", "city.name", "New York")
+people.filtered(using: allInNYC)
 
 
 
@@ -47,7 +48,14 @@ people.filtered(using: allInSF)
 💻 __EXERCISE__: add a new class (State) with property name. Add State to the city. Filter all people living in the California State
 
 */
-
+class State: NSObject {
+    
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+}
 
 //: [Solved exercise - try to do it, it's better 😉](Solutions)
 

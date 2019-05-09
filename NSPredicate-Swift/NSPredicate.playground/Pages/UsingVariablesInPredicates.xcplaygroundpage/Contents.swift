@@ -40,8 +40,8 @@ people.filtered(using: allAge61Object)
 */
 
 
-
-
+let nameFilter = NSPredicate(format: "name == Groucho")
+people.filtered(using: nameFilter)
 
 /*:
 
@@ -49,7 +49,8 @@ people.filtered(using: allAge61Object)
 
 */
 
-
+let allObjectage50 = NSPredicate(format: "age >= 50", NSNumber(value: 50))
+people.filtered(using: allObjectage50)
 
 
 //: [Next](@next)

@@ -32,8 +32,9 @@ let groucho = APerson(name: "Groucho", age: 50)
 let chicco  = APerson(name: "Chicco", age: 61)
 let harpo   = APerson(name: "Harpo", age: 45)
 let zeppo   = APerson(name: "Zeppo", age: 61)
+let roboto = APerson(name: "roboto", age: 45)
 
-let people: NSArray = [groucho, chicco, harpo, zeppo]
+let people: NSArray = [groucho, chicco, harpo, zeppo, roboto]
 // using a NSArray here because predicates work with them, not with regular Swift Arrays
 
 /*:
@@ -43,9 +44,10 @@ we can get __all people of age == 61__ with a simple predicate
 */
 
 let allAge61 = NSPredicate(format: "age = 61")
+let allAge45 = NSPredicate(format: "age = 45")
 
 people.filtered(using: allAge61)
-
+people.filtered(using: allAge45)
 /*:
 
 we can also __filter by name__

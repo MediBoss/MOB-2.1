@@ -35,15 +35,14 @@ let people: NSArray = [groucho, chicco, harpo, zeppo]
 💻 __EXERCISE__: filter all people that's not 50 years old
 
 */
-
-
+var allPeopleNot50 = NSPredicate(format: "age != %d", NSNumber(value: 50))
 
 /*:
 
 💻 __EXERCISE__: filter all people younger that 60 years old
 
 */
-
+var allPeopleYounger60 = NSPredicate(format: "age < %d", NSNumber(value: 50))
 
 
 
