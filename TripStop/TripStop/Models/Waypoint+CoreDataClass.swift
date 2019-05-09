@@ -2,14 +2,13 @@
 //  Waypoint+CoreDataClass.swift
 //  TripStop
 //
-//  Created by Medi Assumani on 4/30/19.
+//  Created by Medi Assumani on 5/8/19.
 //  Copyright © 2019 Medi Assumani. All rights reserved.
 //
 //
 
-import CoreData
-import CoreLocation
 import Foundation
+import CoreData
 
 @objc(Waypoint)
 public class Waypoint: NSManagedObject {
@@ -18,6 +17,7 @@ public class Waypoint: NSManagedObject {
         super.awakeFromInsert()
         
         name = "Unknowed Waypoint"
-        coordinates = CustomCoordinates(lon: 0.0, lat: 0.0)
+        longitude = 0.0
+        latitude = 0.0
     }
 }

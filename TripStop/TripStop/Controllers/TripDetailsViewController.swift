@@ -120,11 +120,23 @@ extension TripDetailsViewController: UITableViewDataSource, UITableViewDelegate 
         return 50.0
     }
     
+    func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            CoreDataStack.shared.delete(object: fetchedResultsController.object(at: indexPath))
+            DispatchQueue.main.async {
+                self.waypointTableView.reloadData()
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-//        let destinationVC = WaypointDetailViewController()
-//        let selectedWaypoint = waypoints[indexPath.row]
-//        destinationVC.waypoint = selectedWaypoint
-//        navigationController?.pushViewController(destinationVC, animated: true)
+        let destinationVC = WaypointDetailViewController()
+        let selectedWaypoint = fetchedResultsController.object(at: indexPath)
+        destinationVC.waypoint = selectedWaypoint
+        navigationController?.pushViewController(destinationVC, animated: true)
     }
 }

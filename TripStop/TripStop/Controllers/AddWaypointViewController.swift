@@ -18,9 +18,6 @@ class AddWaypointViewController: UIViewController {
     var wayPoint: Waypoint?
     var parentTrip: Trip?
     var waypointDetails: (String, CLLocationCoordinate2D)? = nil
-    // get a reference to the persisten
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -77,25 +74,22 @@ class AddWaypointViewController: UIViewController {
     
     @objc private func saveWaypointButtonTapped(_ sender: UIBarButtonItem) {
         
-        //navigationController?.popViewController(animated: true)
-        
         var waypoint = Waypoint(context: CoreDataStack.shared.peristentContainer.viewContext)
-        
+
         if let details = waypointDetails {
-            
+
             let waypointName = details.0
             let longitude = details.1.longitude
             let latitude = details.1.latitude
-            
+
             waypoint.name = waypointName
-            waypoint.coordinates = CustomCoordinates(lon: longitude, lat: latitude)
-            waypoint.trip = parentTrip!
-            //parentTrip?.waypoints.append(waypoint)
+            waypoint.longitude = longitude
+            waypoint.latitude = latitude
+
             parentTrip?.addToWaypoint(waypoint)
             CoreDataStack.shared.save()
+            navigationController?.popViewController(animated: true)
         }
-        
-        navigationController?.popViewController(animated: true)
     }
     
     @objc private func cancelButtonIsTapped(_ sender: UIBarButtonItem) {

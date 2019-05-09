@@ -125,4 +125,16 @@ extension HomePageViewController: UITableViewDataSource, UITableViewDelegate {
         destinationVC.currentTrip = selectedTrip
         navigationController?.pushViewController(destinationVC, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            
+            let selectedTrip = self.trips[indexPath.row]
+            CoreDataStack.shared.delete(object: selectedTrip)
+            DispatchQueue.main.async {
+                self.tripsTableView.reloadData()
+            }
+        }
+    }
 }

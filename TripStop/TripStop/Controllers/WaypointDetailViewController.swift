@@ -24,10 +24,10 @@ class WaypointDetailViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-//        guard let lon = waypoint?.coordinates.longitude, let lat = waypoint?.coordinates.latitude, let name = waypoint?.name else { return }
-//        let coordinates = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-//        
-//        LocationServices.shared.centerLocationOnMap(coordinates: coordinates, annotationTitle: name, map: mapView)
+        guard let lon = waypoint?.longitude, let lat = waypoint?.latitude, let name = waypoint?.name else { return }
+        let coordinates = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+        
+        LocationServices.shared.centerLocationOnMap(coordinates: coordinates, annotationTitle: name, map: mapView)
     }
 }
 

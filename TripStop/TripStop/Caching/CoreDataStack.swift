@@ -18,7 +18,6 @@ enum CoreDataFetchResult {
 
 struct CoreDataStack {
 
-    init() {}
     static let shared = CoreDataStack()
     
     lazy var mainContext: NSManagedObjectContext = {
@@ -62,29 +61,11 @@ struct CoreDataStack {
     }
     
     
-    func createWaypoint() -> Waypoint{
-        let newObject = NSEntityDescription.insertNewObject(forEntityName: "Waypoint", into: peristentContainer.viewContext) as! Waypoint
-        
-        return newObject
-    }
-    
     func delete(object: NSManagedObject) {
         
         peristentContainer.viewContext.delete(object)
         save()
     }
-    
-    func fetchSingleTrip() {
-        
-    }
-    
-//    func fetchWaypoints(from trip: Trip) {
-//
-//        //let predicate = NSPredicate(format: "<#T##String#>", <#T##args: CVarArg...##CVarArg#>)
-//        let fetchRequest: NSFetchRequest<Waypoint> = Waypoint.fetchRequest()
-//
-//        fetchRequest.predicate = predicate
-//    }
     
     func fetchTrips(completion: @escaping(CoreDataFetchResult) -> ()) {
 
