@@ -11,7 +11,7 @@ import Foundation
 import MapKit
 
 struct LocationServices{
-    
+     
     static let shared = LocationServices()
     
     /** Return the coordinate of a location based on its address

@@ -78,13 +78,13 @@ struct CoreDataStack {
         
     }
     
-    func fetchWaypoints(from trip: Trip) {
-        
-        let predicate = NSPredicate(format: "<#T##String#>", <#T##args: CVarArg...##CVarArg#>)
-        let fetchRequest: NSFetchRequest<Waypoint> = Waypoint.fetchRequest()
-        
-        fetchRequest.predicate = predicate
-    }
+//    func fetchWaypoints(from trip: Trip) {
+//
+//        //let predicate = NSPredicate(format: "<#T##String#>", <#T##args: CVarArg...##CVarArg#>)
+//        let fetchRequest: NSFetchRequest<Waypoint> = Waypoint.fetchRequest()
+//
+//        fetchRequest.predicate = predicate
+//    }
     
     func fetchTrips(completion: @escaping(CoreDataFetchResult) -> ()) {
 

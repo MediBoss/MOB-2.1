@@ -24,6 +24,11 @@ extension Waypoint {
 }
 
 public class CustomCoordinates: NSObject, NSCoding{
+    
+    var lon: Double
+    var lat: Double
+    
+    
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(lon, forKey: "longitude")
@@ -36,13 +41,5 @@ public class CustomCoordinates: NSObject, NSCoding{
         lat = aDecoder.decodeObject(forKey: "latitude") as! Double
         super.init()
     }
-    
-    
-    var lon: Double
-    var lat: Double
-    
-    init(lon: Double, lat: Double) {
-        self.lon = lon
-        self.lat = lat
-    }
+
 }

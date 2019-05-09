@@ -8,12 +8,26 @@
 
 import CoreLocation
 import UIKit
+import CoreData
 
 
 class TripDetailsViewController: UIViewController {
 
     
-    var currentTrip: Trip?
+    var currentTrip: Trip!
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<Waypoint> = {
+        let fetchRequest: NSFetchRequest<Waypoint> = Waypoint.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "trip = %@", currentTrip)
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                                  managedObjectContext: CoreDataStack.shared.peristentContainer.viewContext,
+                                                                  sectionNameKeyPath: nil,
+                                                                  cacheName: nil)
+        return fetchedResultsController
+    }()
+    
     
     lazy var waypointTableView: UITableView = {
         
@@ -31,16 +45,29 @@ class TripDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.waypointTableView.reloadData()
         setUpNavigationBarItems()
         
         mainAutotLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
+    }
+    
+    private func loadData() {
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            print(error)
+        }
+        waypointTableView.reloadData()
+    }
+    
     private func setUpNavigationBarItems(){
         
         guard let title = currentTrip?.name else { return }
-        navigationItem.title = "Your Trip: \(title)"
+        navigationItem.title = "\(title)"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Waypoint", style: .done, target: self, action: #selector(addWaypointButonTapped(_:)))
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.alpha = 1
@@ -68,15 +95,20 @@ class TripDetailsViewController: UIViewController {
 extension TripDetailsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.currentTrip?.waypoints.count ?? 0
+        
+        guard let sectionInfo = fetchedResultsController.sections?[section] else {
+            return 0
+        }
+        
+        return sectionInfo.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = waypointTableView.dequeueReusableCell(withIdentifier: WayPointTableViewCell.identifier, for: indexPath) as! WayPointTableViewCell
         
-        let currentWaypoint = self.currentTrip?.waypoints[indexPath.row]
-        cell.waypointNameLabel.text = currentWaypoint?.name ?? "Unknown Waypoint"
+        let currentWaypoint = self.fetchedResultsController.object(at: indexPath)
+        cell.waypointNameLabel.text = currentWaypoint.name
         return cell
     }
     

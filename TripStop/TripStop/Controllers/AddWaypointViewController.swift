@@ -18,6 +18,18 @@ class AddWaypointViewController: UIViewController {
     var wayPoint: Waypoint?
     var parentTrip: Trip?
     var waypointDetails: (String, CLLocationCoordinate2D)? = nil
+    // get a reference to the persisten
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        view.addSubview(mapView)
+        mapView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +37,7 @@ class AddWaypointViewController: UIViewController {
         view.backgroundColor = .white
         setUpSeachController()
         setUpNavigationBarItems()
-        view.addSubview(mapView)
-        mapView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+        
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(onDidReceiveWaypointFromSearchBar(_:)),
@@ -68,25 +77,25 @@ class AddWaypointViewController: UIViewController {
     
     @objc private func saveWaypointButtonTapped(_ sender: UIBarButtonItem) {
         
-        navigationController?.popViewController(animated: true)
-        let entityDescription = NSEntityDescription.entity(forEntityName: "Waypoint", in: CoreDataStack.shared.peristentContainer.viewContext)
-        let context = CoreDataStack.shared.peristentContainer.viewContext
-        if let entityDescription = entityDescription {
-            var waypoint = NSManagedObject(entity: entityDescription, insertInto: context) as! Waypoint
+        //navigationController?.popViewController(animated: true)
+        
+        var waypoint = Waypoint(context: CoreDataStack.shared.peristentContainer.viewContext)
+        
+        if let details = waypointDetails {
             
-            if let details = waypointDetails {
-                
-                let waypointName = details.0
-                let longitude = details.1.longitude
-                let latitude = details.1.latitude
-                
-                waypoint.name = waypointName
-                waypoint.coordinates = CustomCoordinates(lon: longitude, lat: latitude)
-                waypoint.trip = parentTrip!
-                parentTrip?.addToWaypoint(waypoint)
-                CoreDataStack.shared.save()
-            }
+            let waypointName = details.0
+            let longitude = details.1.longitude
+            let latitude = details.1.latitude
+            
+            waypoint.name = waypointName
+            waypoint.coordinates = CustomCoordinates(lon: longitude, lat: latitude)
+            waypoint.trip = parentTrip!
+            //parentTrip?.waypoints.append(waypoint)
+            parentTrip?.addToWaypoint(waypoint)
+            CoreDataStack.shared.save()
         }
+        
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func cancelButtonIsTapped(_ sender: UIBarButtonItem) {
